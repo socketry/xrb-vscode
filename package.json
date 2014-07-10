@@ -7,5 +7,12 @@
     "atom": "*",
     "node": "*"
   },
-  "homepage": "https://github.com/ioquatix/language-trenni"
+  "homepage": "https://github.com/ioquatix/language-trenni",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ioquatix/language-trenni.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ioquatix/language-trenni/issues"
+  }
 }
