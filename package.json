@@ -1,6 +1,6 @@
 {
   "name": "language-trenni",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Trenni language support in Atom",
   "license": "MIT",
   "engines": {
