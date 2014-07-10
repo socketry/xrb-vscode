@@ -1,0 +1,11 @@
+{
+  "name": "language-trenni",
+  "version": "0.1.0",
+  "description": "Trenni language support in Atom",
+  "license": "MIT",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "homepage": "https://github.com/ioquatix/language-trenni"
+}

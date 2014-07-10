@@ -1,0 +1,46 @@
+'fileTypes': [
+  'xnode', 'trenni'
+]
+
+'name': 'Trenni Template'
+
+'patterns': [
+  {
+    'begin': '(^\\s+)?<\\?r(?!>)'
+    'captures':
+      '0':
+        'name': 'punctuation.section.embedded.ruby'
+    'end': '\\?>'
+    'name': 'source.ruby.trenni.embedded.html'
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.definition.comment.ruby'
+        'match': '(#).*?(?=-?\?>)'
+        'name': 'comment.line.number-sign.ruby'
+      }
+      {
+        'include': 'source.ruby'
+      }
+    ]
+  }
+  {
+    'begin': '#\{'
+    'captures':
+      '0':
+        'name': 'punctuation.section.embedded.ruby'
+    'end': '\}'
+    'name': 'source.ruby.trenni.expression.embedded.html'
+    'patterns': [
+      {
+        'include': 'source.ruby'
+      }
+    ]
+  }
+  {
+    'include': 'text.html.basic'
+  }
+]
+
+'scopeName': 'text.trenni.template'
