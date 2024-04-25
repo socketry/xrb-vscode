@@ -1,12 +1,11 @@
 {
 	"name": "xrb-vscode",
+	"displayName": "XRB Language Support",
+	"description": "Ruby XRB language syntax highlighter.",
 	"version": "0.3.0",
-	"description": "XRB language support for vscode",
+	"publisher": "socketry",
 	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/socketry/xrb-vscode"
-	},
+	"repository": "https://github.com/socketry/xrb-vscode",
 	"engines": {
 		"vscode": "^1.44.0"
 	},
