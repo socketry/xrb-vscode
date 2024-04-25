@@ -1,0 +1,3 @@
+<?r foo = 10 ?>
+<div bar="20">#{foo + 20}</div>
+<foo:bar bar="20">Baz</foo:bar>
