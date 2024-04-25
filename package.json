@@ -1,18 +1,37 @@
 {
-  "name": "language-trenni",
-  "version": "0.2.1",
-  "description": "Trenni language support in Atom",
-  "license": "MIT",
-  "engines": {
-    "atom": "*",
-    "node": "*"
-  },
-  "homepage": "https://github.com/ioquatix/language-trenni",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ioquatix/language-trenni.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ioquatix/language-trenni/issues"
-  }
+	"name": "xrb-vscode",
+	"version": "0.3.0",
+	"description": "XRB language support for vscode",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/socketry/xrb-vscode"
+	},
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "xrb",
+				"aliases": ["XRB"],
+				"extensions": [".xrb", ".xnode", ".trenni"]
+			}
+		],
+		"grammars": [
+			{
+				"language": "xrb",
+				"scopeName": "source.xrb",
+				"path": "syntaxes/xrb.json",
+				"embeddedLanguages": {
+					"source.css": "css",
+					"source.js": "javascript",
+					"source.ruby": "ruby"
+				}
+			}
+		]
+	}
 }

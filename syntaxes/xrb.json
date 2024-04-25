@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "XRB",
+  "scopeName": "source.xrb",
+  "patterns": [
+    { "include": "#interpolations" },
+    { "include": "#tags" },
+    { "include": "text.html.basic" }
+  ],
+  "repository": {
+    "interpolations": {
+      "patterns": [
+        {
+          "begin": "#\\{",
+          "beginCaptures": {
+            "0": { "name": "punctuation.section.embedded.begin.ruby" }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": { "name": "punctuation.section.embedded.end.ruby" }
+          },
+          "name": "source.ruby.xrb.expression.embedded.html",
+          "patterns": [
+            {
+              "include": "source.ruby"
+            }
+          ]
+        }
+      ]
+    },
+    "tags": {
+      "patterns": [
+        {
+          "begin": "<\\?r(?!\\w)",
+          "beginCaptures": {
+            "0": { "name": "punctuation.section.embedded.begin.ruby" }
+          },
+          "end": "\\?>",
+          "endCaptures": {
+            "0": { "name": "punctuation.section.embedded.end.ruby" }
+          },
+          "name": "source.ruby.xrb.tag.embedded.html",
+          "patterns": [
+            {
+              "begin": "(^[ \\t]+)?(?=#)",
+              "beginCaptures": {
+                "1": {
+                  "name": "punctuation.whitespace.comment.leading.ruby"
+                }
+              },
+              "end": "(?!\\G)",
+              "patterns": [
+                {
+                  "captures": {
+                    "1": { "name": "punctuation.definition.comment.ruby" }
+                  },
+                  "name": "comment.line.number-sign.ruby",
+                  "match": "#.*?(?=-?\\?>)"
+                }
+              ]
+            },
+            {
+              "include": "source.ruby"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
