@@ -1,0 +1,109 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "XRB",
+  "scopeName": "text.html.xrb",
+  "injections": {
+    "text.html.xrb - (meta.embedded.block.xrb | meta.embedded.line.xrb | meta.tag | comment), L:meta.tag, L:source.js.embedded.html": {
+      "patterns": [
+        {
+          "begin": "(^\\s*)(?=<%+#(?![^%]*%>))",
+          "beginCaptures": {
+            "0": { "name": "punctuation.whitespace.comment.leading.xrb" }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": { "name": "punctuation.whitespace.comment.trailing.xrb" }
+          },
+          "patterns": [
+            { "include": "#comment" }
+          ]
+        },
+        {
+          "begin": "(^\\s*)(?=<%(?![^%]*%>))",
+          "beginCaptures": {
+            "0": { "name": "punctuation.whitespace.embedded.leading.xrb" }
+          },
+          "end": "(?!\\G)(\\s*$\\n)?",
+          "endCaptures": {
+            "0": { "name": "punctuation.whitespace.embedded.trailing.xrb" }
+          },
+          "patterns": [
+            { "include": "#tags" }
+          ]
+        },
+        { "include": "#comment" },
+        { "include": "#tags" }
+      ]
+    }
+  },
+  "patterns": [
+    { "include": "text.html.basic" }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "begin": "<%+#",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.comment.begin.xrb" }
+          },
+          "end": "%>",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.comment.end.xrb" }
+          },
+          "name": "comment.block.xrb"
+        }
+      ]
+    },
+    "tags": {
+      "patterns": [
+        {
+          "begin": "<%+(?!>)[-=]?(?![^%]*%>)",
+          "beginCaptures": {
+            "0": { "name": "punctuation.section.embedded.begin.xrb" }
+          },
+          "contentName": "source.ruby.embedded.xrb",
+          "end": "-?%>",
+          "endCaptures": {
+            "0": { "name": "punctuation.section.embedded.end.xrb" },
+            "1": { "name": "source.ruby" }
+          },
+          "name": "meta.embedded.block.xrb",
+          "patterns": [
+            {
+              "captures": {
+                "1": { "name": "punctuation.definition.comment.xrb" }
+              },
+              "match": "(#).*?(?=-?%>)",
+              "name": "comment.line.number-sign.xrb"
+            },
+            { "include": "source.ruby" }
+          ]
+        },
+        {
+          "begin": "<%+(?!>)[-=]?",
+          "beginCaptures": {
+            "0": { "name": "punctuation.section.embedded.begin.xrb" }
+          },
+          "contentName": "source.ruby.embedded.xrb",
+          "end": "-?%>",
+          "endCaptures": {
+            "0": { "name": "punctuation.section.embedded.end.xrb" },
+            "1": { "name": "source.ruby" }
+          },
+          "name": "meta.embedded.line.xrb",
+          "patterns": [
+            {
+              "captures": {
+                "1": { "name": "punctuation.definition.comment.xrb" }
+              },
+              "match": "(#).*?(?=-?%>)",
+              "name": "comment.line.number-sign.xrb"
+            },
+            { "include": "source.ruby" }
+          ]
+        }
+      ]
+    }
+  }
+}
