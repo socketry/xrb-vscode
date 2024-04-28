@@ -33,6 +33,16 @@
 			},
 			{
 				"injectTo": [
+					"text.html.markdown"
+				],
+				"scopeName": "inline.xrb.markdown.codeblock",
+				"path": "syntaxes/xrb.markdown.codeblock.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.xrb": "xrb"
+				}
+			},
+			{
+				"injectTo": [
 					"source.ruby",
 					"text.html.markdown"
 				],

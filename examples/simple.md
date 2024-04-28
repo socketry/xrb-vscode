@@ -1,3 +1,5 @@
 ``` xrb
-<?r hello ?>
+<p>hello</p>
+#{"foo" + 10}
+<?r hello # bar ?>
 ```
