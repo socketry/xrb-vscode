@@ -30,6 +30,17 @@
 					"source.js": "javascript",
 					"source.ruby": "ruby"
 				}
+			},
+			{
+				"injectTo": [
+					"source.ruby",
+					"text.html.markdown"
+				],
+				"scopeName": "inline.xrb.ruby",
+				"path": "syntaxes/xrb.ruby.json",
+				"embeddedLanguages": {
+					"meta.embedded.block.xrb": "xrb"
+				}
 			}
 		]
 	}
